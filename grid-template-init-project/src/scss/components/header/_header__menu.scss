@@ -1,1 +1,13 @@
 @use "../../abstracts" as *;
+
+.header__menu {
+  z-index: 2;
+
+  padding: $gap 0;
+
+  @include position($top: 0, $right: 0, $left: 0);
+
+  &-container {
+    @extend %container;
+  }
+}
