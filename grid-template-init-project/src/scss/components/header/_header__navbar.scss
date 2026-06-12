@@ -1,17 +1,46 @@
 @use "../../abstracts" as *;
 
 .header__navbar {
+  position: relative;
+
   &-list {
     display: flex;
     gap: $gap;
 
     @include unlist(0 $gap-sm 0 0);
+
+    @include md {
+      display: none;
+      position: absolute;
+      top: 100%;
+
+      right: $gap;
+      overflow: hidden;
+      text-align: center;
+
+      flex-direction: column;
+      gap: 0;
+
+      // background-color: $color-white;
+      // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      // padding: $gap;
+      // margin: 0;
+    }
   }
 
   &-item {
     :hover,
     :focus {
       color: $color-accent;
+    }
+
+    @include md {
+      padding: $gap-sm 0;
+      border-bottom: 1px solid #eee;
+
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
 
@@ -21,8 +50,50 @@
     letter-spacing: 0.085em;
     font-size: 1.125rem;
     transition: color 0.3s;
+
+    @include md {
+      padding: 0;
+      display: block;
+    }
   }
 
-  &-btm {
+  &-btn {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    @include md {
+      display: flex;
+    }
+
+    &.active {
+      .header__navbar-btn-row {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -7px);
+        }
+      }
+    }
+  }
+
+  &-btn-row {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: $color-white;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
   }
 }

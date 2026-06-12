@@ -11,12 +11,7 @@
 
   padding: 0.5em 1em;
 
-  min-width: 250px;
-  min-height: 60px;
-
   letter-spacing: 0.1em;
-
-  font-size: 1.125rem;
 
   border-width: 2px;
   border-style: solid;
@@ -30,9 +25,26 @@
 
   &--light {
     border-color: $color-white;
+
+    @include lg-min {
+      min-width: 250px;
+      min-height: 60px;
+      font-size: 1.125rem;
+    }
+
+    @include lg-md {
+      min-width: 200px;
+      min-height: 50px;
+    }
+
+    @include lg-md {
+      min-width: 170px;
+      min-height: 40px;
+    }
   }
 
   &--primary {
     border-color: $color-white;
+    font-size: 1.125rem;
   }
 }

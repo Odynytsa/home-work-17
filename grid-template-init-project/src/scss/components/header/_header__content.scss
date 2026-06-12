@@ -29,7 +29,11 @@
   &-actions {
     display: flex;
     justify-content: center;
-    text-align: center;
     gap: $gap;
+
+    @include sm {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
