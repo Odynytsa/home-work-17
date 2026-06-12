@@ -1,6 +1,7 @@
 @use "../../abstracts" as *;
 
 .header__content {
+  margin-top: 170px;
   position: relative;
 
   z-index: 1;
@@ -11,7 +12,7 @@
 
   &-title {
     text-align: center;
-    margin: 0 0 47px 0;
+    margin: 0 0 54px 0;
   }
 
   &-actions {

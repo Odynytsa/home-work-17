@@ -1,1 +1,29 @@
 @use "../../abstracts" as *;
+
+.header__navbar {
+  &-list {
+    display: flex;
+    gap: $gap;
+
+    @include unlist(0 $gap-sm 0 0);
+  }
+
+  &-item {
+  }
+
+  &-link {
+    padding: $gap $gap-sm;
+
+    letter-spacing: 0.085em;
+    font-size: 1.125rem;
+    transition: color 0.3s;
+
+    :hover,
+    :focus {
+      color: $color-accent;
+    }
+  }
+
+  &-btm {
+  }
+}

@@ -179,6 +179,7 @@ h1{
   font-size:3.75rem;
   font-weight:300;
   line-height:1.2;
+  letter-spacing:0.078em;
 }
 
 h2{
@@ -255,12 +256,13 @@ a{
 }
 
 .header__content{
+  margin-top:170px;
   position:relative;
   z-index:1;
 }
 .header__content-title{
   text-align:center;
-  margin:0 0 47px 0;
+  margin:0 0 54px 0;
 }
 .header__content-actions{
   display:-webkit-box;
@@ -280,6 +282,51 @@ a{
   top:0;
   right:0;
   left:0;
+}
+.header__menu-container{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  gap:20px;
+}
+
+.header__logo-link{
+  display:block;
+  letter-spacing:0.23em;
+  font-size:1.25rem;
+}
+.header__logo-accent{
+  display:inline-block;
+  padding:15px 9px 15px 9px;
+  margin-right:4px;
+  border:3px solid #d53d27;
+}
+
+.header__navbar-list{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  gap:20px;
+  margin:0 10px 0 0;
+  padding:0;
+  list-style:none;
+}
+.header__navbar-link{
+  padding:20px 10px;
+  letter-spacing:0.085em;
+  font-size:1.125rem;
+  -webkit-transition:color 0.3s;
+  transition:color 0.3s;
+}
+.header__navbar-link :hover,
+.header__navbar-link :focus{
+  color:#d66926;
 }
 .header__overley{
   background-color:rgba(45, 54, 81, 0.8);
