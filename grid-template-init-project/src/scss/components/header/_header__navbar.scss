@@ -9,6 +9,10 @@
   }
 
   &-item {
+    :hover,
+    :focus {
+      color: $color-accent;
+    }
   }
 
   &-link {
@@ -17,11 +21,6 @@
     letter-spacing: 0.085em;
     font-size: 1.125rem;
     transition: color 0.3s;
-
-    :hover,
-    :focus {
-      color: $color-accent;
-    }
   }
 
   &-btm {

@@ -12,7 +12,18 @@
 
   &-title {
     text-align: center;
-    margin: 0 0 54px 0;
+
+    @include lg-min {
+      margin: 0 0 54px 0;
+    }
+
+    @include lg-md {
+      margin: 0 0 44px 0;
+    }
+
+    @include md {
+      margin: 0 0 34px 0;
+    }
   }
 
   &-actions {

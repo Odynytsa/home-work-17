@@ -176,7 +176,6 @@ body{
 
 h1{
   font-family:"Roboto Slab", serif;
-  font-size:3.75rem;
   font-weight:300;
   line-height:1.2;
   letter-spacing:0.078em;
@@ -262,7 +261,6 @@ a{
 }
 .header__content-title{
   text-align:center;
-  margin:0 0 54px 0;
 }
 .header__content-actions{
   display:-webkit-box;
@@ -317,16 +315,16 @@ a{
   padding:0;
   list-style:none;
 }
+.header__navbar-item :hover,
+.header__navbar-item :focus{
+  color:#d66926;
+}
 .header__navbar-link{
   padding:20px 10px;
   letter-spacing:0.085em;
   font-size:1.125rem;
   -webkit-transition:color 0.3s;
   transition:color 0.3s;
-}
-.header__navbar-link :hover,
-.header__navbar-link :focus{
-  color:#d66926;
 }
 .header__overley{
   background-color:rgba(45, 54, 81, 0.8);
@@ -335,4 +333,28 @@ a{
   right:0;
   bottom:0;
   left:0;
+}
+@media (768px <= width < 992px){
+  h1{
+    font-size:2.5rem;
+  }
+  .header__content-title{
+    margin:0 0 44px 0;
+  }
+}
+@media (992px <= width){
+  h1{
+    font-size:3.75rem;
+  }
+  .header__content-title{
+    margin:0 0 54px 0;
+  }
+}
+@media (width < 768px){
+  h1{
+    font-size:1.875rem;
+  }
+  .header__content-title{
+    margin:0 0 34px 0;
+  }
 }
