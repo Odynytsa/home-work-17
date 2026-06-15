@@ -1,1 +1,33 @@
 @use "../../abstracts" as *;
+
+.skills__item {
+  position: relative;
+  min-height: 33vh;
+
+  &-title {
+  }
+
+  &-link {
+  }
+
+  &-image {
+    background-color: $color-primary;
+    background-position: center;
+    background-size: cover;
+
+    @include abs-position;
+  }
+
+  &-overlay {
+    opacity: 0.8;
+    background-color: $color-primary;
+
+    @include abs-position;
+  }
+
+  @for $i from 1 through 9 {
+    &:nth-child(#{$i}) {
+      grid-area: a#{$i};
+    }
+  }
+}
