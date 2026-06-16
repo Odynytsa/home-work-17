@@ -1,6 +1,9 @@
 @use "../../abstracts" as *;
 @use "sass:math";
 
+$local-gap: math.div(40px, 3);
+$local-hieght: 200px;
+
 .skills {
   @include sm-min {
     padding: $gap-sm;
@@ -15,19 +18,57 @@
 
   &__container {
     display: grid;
+    grid-auto-rows: minmax($local-hieght, calc(33.33333333vh - $local-gap));
 
-    grid-template-areas:
-      "a1 a1 a2 a3"
-      "a4 a5 a5 a9"
-      "a6 a7 a8 a9";
+    @include lg-min {
+      grid-template-areas:
+        "a1 a1 a2 a3"
+        "a4 a5 a5 a9"
+        "a6 a7 a8 a9";
 
-    grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include lg-md {
+      grid-template-areas:
+        "a1 a1 a2 "
+        "a3 a4 a4 "
+        "a5 a5 a9 "
+        "a6 a7 a9 "
+        "a6 a8 a8 ";
+
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include md-sm {
+      grid-template-areas:
+        "a1 a2 "
+        "a3 a2 "
+        "a4 a4 "
+        "a5 a9 "
+        "a5 a6 "
+        "a7 a8 ";
+
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @include sm-min {
       gap: $gap-sm;
     }
 
     @include sm {
+      grid-template-areas:
+        "a1"
+        "a2"
+        "a3"
+        "a4"
+        "a5"
+        "a9"
+        "a6"
+        "a7"
+        "a8";
+
+      grid-template-columns: repeat(1, 1fr);
       gap: $gap;
     }
   }
