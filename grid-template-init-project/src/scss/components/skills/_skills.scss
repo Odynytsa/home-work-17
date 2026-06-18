@@ -20,6 +20,8 @@ $local-hieght: 200px;
     display: grid;
     grid-auto-rows: minmax($local-hieght, calc(33.33333333vh - $local-gap));
 
+    margin-bottom: $gap;
+
     @include lg-min {
       grid-template-areas:
         "a1 a1 a2 a3"
@@ -74,5 +76,11 @@ $local-hieght: 200px;
   }
 
   &__actions {
+    display: flex;
+    justify-content: center;
+
+    @include sm-min {
+      margin-bottom: $gap-lg;
+    }
   }
 }

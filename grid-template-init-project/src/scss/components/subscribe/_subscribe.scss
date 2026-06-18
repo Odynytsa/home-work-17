@@ -1,1 +1,48 @@
 @use "../../abstracts" as *;
+
+.subscribe {
+  background-color: $color-primary;
+  padding: $gap-lg;
+
+  @include md {
+    padding: $gap-x4 $gap;
+  }
+
+  @include sm {
+    padding: $gap-x3 $gap;
+  }
+}
+
+.subscribe__container {
+  max-width: $container-size;
+  margin: 0 auto;
+}
+
+.subscribe__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: $gap-lg;
+  align-items: center;
+
+  // На среднем экране (md): 2 колонки
+  @include md {
+    grid-template-columns: 1fr 1fr;
+    gap: $gap;
+
+    .subscribe__item--name {
+      grid-column: span 2;
+    }
+  }
+
+  // На маленьком экране (sm): 1 колонка (вертикально)
+  @include sm {
+    grid-template-columns: 1fr;
+    gap: $gap;
+
+    .subscribe__item--name,
+    .subscribe__item--email,
+    .subscribe__item--submit {
+      grid-column: auto;
+    }
+  }
+}

@@ -1,1 +1,76 @@
 @use "../../abstracts" as *;
+
+.subscribe__item {
+  padding: $gap $gap-lg;
+  background-color: rgba($color-white, 0.05);
+  border-bottom: 2px solid rgba($color-white, 0.8);
+  color: $color-white;
+  font-family: $font-main;
+  font-size: $font-size;
+  font-weight: 400;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+
+  &::placeholder {
+    color: rgba($color-white, 0.7);
+  }
+
+  // На маленьком экране
+  @include sm {
+    padding: $gap $gap;
+    font-size: 14px;
+  }
+}
+
+// Стили для инпутов (name и email)
+.subscribe__item--name,
+.subscribe__item--email {
+  &:hover {
+    border-color: $color-white;
+    box-shadow: 0 0 10px rgba($color-accent, 0.3);
+    opacity: 0.95;
+  }
+
+  &:focus {
+    border-color: $color-accent;
+    background-color: rgba($color-accent, 0.05);
+    box-shadow: 0 0 15px rgba($color-accent, 0.4);
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}
+
+// Стили для кнопки
+.subscribe__item--submit {
+  color: $color-white;
+  border-bottom: 2px solid $color-white;
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $color-accent;
+    border-color: $color-white;
+    color: $color-white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba($color-accent, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba($color-white, 0.5);
+  }
+
+  @include sm {
+    grid-column: auto;
+    width: 100%;
+  }
+}

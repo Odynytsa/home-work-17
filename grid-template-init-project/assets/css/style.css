@@ -375,7 +375,17 @@ a{
 .skills__container{
   display:grid;
   grid-auto-rows:minmax(200px, calc(33.33333333vh - 13.3333333333px));
+  margin-bottom:20px;
 }
+.skills__actions{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+}
+
 .skills__item{
   position:relative;
   overflow:hidden;
@@ -465,6 +475,114 @@ a{
 .skills__item:nth-child(9){
   grid-area:a9;
 }
+
+.subscribe{
+  background-color:#2d3651;
+  padding:30px;
+}
+
+.subscribe__container{
+  max-width:1300px;
+  margin:0 auto;
+}
+
+.subscribe__form{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:30px;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+}
+
+.subscribe__item{
+  padding:20px 30px;
+  background-color:rgba(255, 255, 255, 0.05);
+  border-bottom:2px solid rgba(255, 255, 255, 0.8);
+  color:#ffffff;
+  font-family:"Roboto", sans-serif;
+  font-size:16px;
+  font-weight:400;
+  -webkit-transition:all 0.3s ease-in-out;
+  transition:all 0.3s ease-in-out;
+  outline:none;
+}
+.subscribe__item::-webkit-input-placeholder{
+  color:rgba(255, 255, 255, 0.7);
+}
+.subscribe__item::-moz-placeholder{
+  color:rgba(255, 255, 255, 0.7);
+}
+.subscribe__item:-ms-input-placeholder{
+  color:rgba(255, 255, 255, 0.7);
+}
+.subscribe__item::-ms-input-placeholder{
+  color:rgba(255, 255, 255, 0.7);
+}
+.subscribe__item::placeholder{
+  color:rgba(255, 255, 255, 0.7);
+}
+
+.subscribe__item--name:hover,
+.subscribe__item--email:hover{
+  border-color:#ffffff;
+  -webkit-box-shadow:0 0 10px rgba(214, 105, 38, 0.3);
+          box-shadow:0 0 10px rgba(214, 105, 38, 0.3);
+  opacity:0.95;
+}
+.subscribe__item--name:focus,
+.subscribe__item--email:focus{
+  border-color:#d66926;
+  background-color:rgba(214, 105, 38, 0.05);
+  -webkit-box-shadow:0 0 15px rgba(214, 105, 38, 0.4);
+          box-shadow:0 0 15px rgba(214, 105, 38, 0.4);
+}
+.subscribe__item--name:focus::-webkit-input-placeholder, .subscribe__item--email:focus::-webkit-input-placeholder{
+  color:transparent;
+}
+.subscribe__item--name:focus::-moz-placeholder, .subscribe__item--email:focus::-moz-placeholder{
+  color:transparent;
+}
+.subscribe__item--name:focus:-ms-input-placeholder, .subscribe__item--email:focus:-ms-input-placeholder{
+  color:transparent;
+}
+.subscribe__item--name:focus::-ms-input-placeholder, .subscribe__item--email:focus::-ms-input-placeholder{
+  color:transparent;
+}
+.subscribe__item--name:focus::placeholder,
+.subscribe__item--email:focus::placeholder{
+  color:transparent;
+}
+
+.subscribe__item--submit{
+  color:#ffffff;
+  border-bottom:2px solid #ffffff;
+  cursor:pointer;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  white-space:nowrap;
+}
+.subscribe__item--submit:hover{
+  background-color:#d66926;
+  border-color:#ffffff;
+  color:#ffffff;
+  -webkit-transform:translateY(-2px);
+      -ms-transform:translateY(-2px);
+          transform:translateY(-2px);
+  -webkit-box-shadow:0 5px 15px rgba(214, 105, 38, 0.4);
+          box-shadow:0 5px 15px rgba(214, 105, 38, 0.4);
+}
+.subscribe__item--submit:active{
+  -webkit-transform:translateY(0);
+      -ms-transform:translateY(0);
+          transform:translateY(0);
+}
+.subscribe__item--submit:focus{
+  outline:none;
+  -webkit-box-shadow:0 0 15px rgba(255, 255, 255, 0.5);
+          box-shadow:0 0 15px rgba(255, 255, 255, 0.5);
+}
 @media (576px <= width < 768px){
   .skills__container{
     grid-template-areas:"a1 a2 " "a3 a2 " "a4 a4 " "a5 a9 " "a5 a6 " "a7 a8 ";
@@ -480,6 +598,9 @@ a{
   }
   .skills__container{
     gap:10px;
+  }
+  .skills__actions{
+    margin-bottom:30px;
   }
 }
 @media (768px <= width < 992px){
@@ -568,6 +689,16 @@ a{
   .skills__item-title{
     font-size:1.125rem;
   }
+  .subscribe{
+    padding:80px 20px;
+  }
+  .subscribe__form{
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+  .subscribe__form .subscribe__item--name{
+    grid-column:span 2;
+  }
 }
 @media (width < 576px){
   .btn--primary{
@@ -589,5 +720,25 @@ a{
     grid-template-areas:"a1" "a2" "a3" "a4" "a5" "a9" "a6" "a7" "a8";
     grid-template-columns:repeat(1, 1fr);
     gap:20px;
+  }
+  .subscribe{
+    padding:60px 20px;
+  }
+  .subscribe__form{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .subscribe__form .subscribe__item--name,
+  .subscribe__form .subscribe__item--email,
+  .subscribe__form .subscribe__item--submit{
+    grid-column:auto;
+  }
+  .subscribe__item{
+    padding:20px 20px;
+    font-size:14px;
+  }
+  .subscribe__item--submit{
+    grid-column:auto;
+    width:100%;
   }
 }
