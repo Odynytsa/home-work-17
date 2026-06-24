@@ -1,58 +1,117 @@
 @use "../../abstracts" as *;
 
 .about {
-  padding: 100px 0;
-  background-color: #f5f5f5;
-}
+  background-color: $color-gray-light;
 
-.about__container {
-  width: $container-size;
-  margin: 0 auto;
-  padding-inline: 20px;
+  padding: $gap-x4;
 
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 80px;
-}
-
-.about__content {
-  display: flex;
-  flex-direction: column;
-  gap: $gap;
-  width: 950px;
-}
-
-.about__title {
-  font-family: $font-header;
-  font-size: $gap-x2;
-  font-weight: 700;
-  margin-bottom: 30px;
-  margin-top: 0;
-}
-
-.about__text {
-  font-size: 1.125rem;
-  font-weight: 400;
-  letter-spacing: 0.9px;
-  margin: 0;
-}
-
-.about__image-wrapper {
-  position: relative;
-  padding-left: 50px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 10%;
-    width: 1px;
-    height: 80%;
-    background-color: #ccc;
+  @include lg-md {
+    padding: $gap-x4 0;
   }
-}
+  @include md {
+    padding: $gap-x3 0;
+  }
 
-.about__image {
-  display: block;
-  max-width: 100%;
+  &__container {
+    display: grid;
+
+    @extend %container;
+
+    align-items: center;
+    gap: $gap-x5;
+
+    grid-template-columns: 3fr 1fr;
+
+    @include md {
+      align-items: center;
+      gap: $gap-x3;
+
+      grid-template-columns: 1fr 1fr;
+    }
+    @include sm {
+      gap: $gap-x3;
+
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      left: -$gap-x2;
+      top: 30%;
+
+      width: 2px;
+      height: 40%;
+
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+
+    @include sm {
+      order: 1;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    margin: 0 0 $gap-x3;
+
+    color: $color-primary;
+
+    font-family: $font-header;
+    font-weight: 700;
+    font-size: 2.5rem;
+
+    @include lg-md {
+      font-size: 2rem;
+    }
+
+    @include md-sm {
+      font-size: 1.5rem;
+    }
+
+    @include sm {
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    color: $color-gray;
+
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include md-sm {
+      font-size: 1rem;
+    }
+
+    @include sm {
+      font-size: 1rem;
+    }
+  }
 }
