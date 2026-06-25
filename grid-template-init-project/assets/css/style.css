@@ -151,7 +151,7 @@ template{
 [hidden]{
   display:none;
 }
-.about__container, .header__menu-container, .header__content-container{
+.footer__container, .about__container, .header__menu-container, .header__content-container{
   width:min(100% - 40px, 1300px);
   margin-inline:auto;
 }
@@ -709,6 +709,55 @@ a{
 }
 .post-card__text{
   margin:auto;
+}
+
+.footer{
+  padding:80px 0;
+  background-color:#2d3651;
+  font-family:"Roboto", sans-serif;
+}
+.footer__container{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+}
+.footer__line{
+  width:75px;
+  height:2px;
+  margin-bottom:20px;
+  background-color:rgba(255, 255, 255, 0.6);
+}
+.footer__text{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+}
+.footer__subtitle{
+  color:rgba(255, 255, 255, 0.3);
+  font-size:0.875rem;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+}
+.footer__title{
+  color:#ffffff;
+  font-weight:700;
+  font-size:1rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
 }
 @media (576px <= width < 768px){
   .skills__container{
