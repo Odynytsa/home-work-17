@@ -1,1 +1,90 @@
 @use "../../abstracts" as *;
+
+.posts {
+  padding: $gap-x3 0;
+  background-color: $color-white;
+
+  &__container {
+    width: min(100% - $gap-x2, calc(#{$container-size} + 50px));
+    margin-inline: auto;
+  }
+
+  &__title {
+    font-family: $font-header;
+    color: $color-primary;
+    margin-bottom: $gap-x3;
+
+    @include lg-md {
+      font-size: 2rem;
+    }
+
+    @include md-sm {
+      font-size: 1.5rem;
+    }
+
+    @include sm {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: $gap;
+
+    @for $i from 1 through 6 {
+      > :nth-child(#{$i}) {
+        grid-area: a#{$i};
+      }
+    }
+
+    @include lg-min {
+      grid-template-areas:
+        "a1 a1 a2 a3"
+        "a4 a5 a6 a6";
+
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include lg-md {
+      grid-template-areas:
+        "a1 a1 a2"
+        "a3 a4 a4"
+        "a5 a5 a6";
+
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include md-sm {
+      grid-template-areas:
+        "a1 a2 "
+        "a3 a4"
+        "a5 a6";
+
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sm {
+      grid-template-areas:
+        "a1"
+        "a2"
+        "a3"
+        "a4"
+        "a5"
+        "a9"
+        "a6";
+
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: $gap;
+
+    @include sm-min {
+      margin-bottom: $gap-lg;
+    }
+  }
+}

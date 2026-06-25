@@ -1,2 +1,38 @@
 @use "../../abstracts" as *;
 @use "sass:color";
+
+.post-card {
+  background-color: $color-gray-light;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    color: $color-gray;
+    text-decoration: none;
+  }
+
+  &__image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  &__body {
+    text-align: center;
+    padding: $gap-x2;
+  }
+
+  &__title {
+    @include lg {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__text {
+    margin: auto;
+  }
+}
